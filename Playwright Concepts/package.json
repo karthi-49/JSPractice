@@ -1,0 +1,19 @@
+{
+  "name": "playwright-concepts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "QA" : "npx playwright test browserlaunch.spec.ts --project QA",
+    "Stage" : "npx playwright test browserlaunch.spec.ts --project Stage",
+    "Prod" : "npx playwright test browserlaunch.spec.ts --project Prod"
+
+  },
+  "keywords": [],
+  "author": "", 
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.2"
+  }
+}
