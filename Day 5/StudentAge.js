@@ -1,11 +1,12 @@
 function ageData(year)
 {
+    let current_year= new Date().getFullYear()
     if (year<=0)
     {
         console.log("Enter valid Birth Year");
     }
     else
-        return 2026-year
+        return current_year-year
 }
 
 function voting_eligibility(callback)
