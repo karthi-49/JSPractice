@@ -1,4 +1,4 @@
-import { Parent } from "./parent";
+import { Parent } from "./parent.ts";
 class child extends Parent
 {
     childAge: number = 8

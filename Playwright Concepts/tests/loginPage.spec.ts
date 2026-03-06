@@ -1,0 +1,25 @@
+import {test,expect} from "@playwright/test"
+
+test("Add Item",async({page})=>{
+    await page.goto("/login")
+    await page.getByPlaceholder("email").fill("Derek@example.com")
+    await page.locator("#pwd").fill("abdcd123@#")
+    await page.getByRole("button",({name:"Login"})).click()
+    await page.locator("//*[contains(text(),'Products')]").click()
+    await page.getByRole("button",({name:"+ Create Product"})).click()
+    await page.getByPlaceholder("Product ID").fill("248")
+    await page.getByPlaceholder("Product Name").fill("Nokia")
+    await page.getByPlaceholder("Product Description").fill("Mobile Phone")
+    await page.getByPlaceholder("Product Price").fill("20000")
+    const color = page.locator("select[name=color]")
+    await color.selectOption("Yellow")
+    await page.locator("input[name=active]").click()
+    await page.locator("button[type=submit]").click()
+    await page.waitForTimeout(3000)
+    const id =await page.locator("//table/tbody/tr/td[2]").allTextContents()
+    //const pageno=page.locator("(//select)[2]")
+    //await pageno.selectOption("8")
+    //await page.waitForTimeout(3000)
+    expect(id,"Item not Created").toContain("248")
+
+})
