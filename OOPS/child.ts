@@ -7,6 +7,11 @@ class child extends Parent
     {
         console.log("Child owns toys"); 
     }
+
+    parentProperty():void
+    {
+        console.log("Child Parent property method");       
+    }
 }
 
 const object =new child()
